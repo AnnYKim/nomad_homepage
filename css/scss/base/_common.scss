@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+// common style
+
+// **** VARIABLES ****
+$ly-header-height: 4.4rem; //페이지 헤더 높이
+//////////////////////
+
+// 페이지 탑
+.page-top {
+  z-index: $z-page-header;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: auto;
+  height: $ly-mypolls-header-height;
+}
+
+// 페이지 헤더
+.page-header {
+  position: relative;
+  width: 100%;
+  height: $ly-header-height;
+  text-align: center;
+  line-height: $ly-header-height;
+
+  &.header-yellow {
+    background-color: $color-yellow;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+
+    img {
+      display: block;
+      width: 8.8rem;
+      height: 2.2rem;
+    }
+  }
+
+  .page-header-left {
+    // @include flexbox;
+    // @include justify-content(center);
+    // @include align-items(center);
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    @include transform(translateY(-50%));
+  }
+
+  .page-header-right {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    @include transform(translateY(-50%));
+  }
+
+  .page-title {
+    color: #323232;
+    font-size: 1.6rem;
+    font-weight: $fw-m;
+  }
+}
+
+// 페이지 바디
+.page-body {
+  width: 100%;
+  height: auto;
+}
+
+// 버튼이 아래로 나열되는 영역
+.button-bottom-area {
+  position: relative;
+  @include flexbox;
+  @include justify-content(center);
+  text-align: center;
+  margin-top: 4rem;
+
+  button:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+//이미지 컨테이너
+.image-container {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.icon-container {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+//숨김 처리
+.display-none {
+  display: none;
+}
+
+///////////////
+//태블릿 대응
+
+@media only screen and (min-width: 920px) {
+  html {
+    font-size: 100%;
+    height: 100%;
+  }
+}
+
+body.login {
+  background-color: #f7f5f5;
+}
+
+input[readonly] {
+  cursor: pointer;
+}
+
+.input-hidden {
+  //숨김 처리
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button-close {
+  overflow-x: hidden;
+  width: 3rem;
+  height: 3rem;
+  text-indent: -999rem;
+  background-image: icon(close, "%23fff");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.body-splash {
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  width: 100%;
+  height: 100%;
+  background-color: $color-yellow;
+
+  .splash-image {
+    margin-top: -5rem;
+    width: 13.5rem;
+    height: 15.5rem;
+    text-indent: -9999px;
+    overflow: hidden;
+    @include bgi("splash");
+    background-size: 100%;
+  }
+}
+
+
+#dim {
+  display: none;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &.active {
+    display: block;
+  }
+
+  .modal {
+    z-index: 101;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    // left: 0;
+    left: -0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flexbox;
+
+    .image {
+      overflow: auto;
+      max-height: 90vh;
+
+      img {
+        display: block;
+        width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .button-close {
+    position: fixed;
+    top: 2rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    // @include transform(translateY(-50%));
+  }
+
+}
