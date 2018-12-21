@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+// 폰트 경로
+$path-font: "../../fonts/";
+
+// 폰트 이름
+$NotoSansBold: "NotoSansKR-Bold"; //900
+// $NotoSansBlack: "NotoSansKR-Black"; //700
+$NotoSansMedium: "NotoSansKR-Medium"; //500
+$NotoSansRegular: "NotoSansKR-Regular"; //400
+$NotoSansDemiLight: "NotoSansKR-DemiLight"; //300
+$NotoSansLight: "NotoSansKR-Light"; //200
+// $NotoSansThin: "NotoSansKR-Thin"; //100
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 900;
+  src: local('Noto Sans Bold'),
+  local('NotoSans-Bold'),
+  url(#{$path-font}#{$NotoSansBold}.woff2) format("woff2"),
+  url(#{$path-font}#{$NotoSansBold}.woff) format("woff");
+}
+
+// @font-face {
+//   font-family: "NotoSans";
+//   font-weight: 700;
+//   src: url(#{$path-font}#{$NotoSansBlack}.woff2) format("woff2"),
+//     url(#{$path-font}#{$NotoSansBlack}.woff) format("woff");
+// }
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 500;
+  src: local('Noto Sans Medium'),
+  local('NotoSans-Medium'),
+  url(#{$path-font}#{$NotoSansMedium}.woff2) format("woff2"),
+  url(#{$path-font}#{$NotoSansMedium}.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 400;
+  src: local('Noto Sans Regular'),
+  local('NotoSans-Regular'),
+  url(#{$path-font}#{$NotoSansRegular}.woff2) format("woff2"),
+  url(#{$path-font}#{$NotoSansRegular}.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 300;
+  src: local('Noto Sans Thin'),
+  local('NotoSans-Thin'),
+  url(#{$path-font}#{$NotoSansDemiLight}.woff) format("woff"),
+  url(#{$path-font}#{$NotoSansDemiLight}.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-weight: 200;
+  src: url(#{$path-font}#{$NotoSansLight}.woff2) format("woff2"),
+  url(#{$path-font}#{$NotoSansLight}.woff) format("woff");
+}
+
+// @font-face {
+//   font-family: "NotoSans";
+//   font-weight: 100;
+//   src: url(#{$path-font}#{$NotoSansThin}.woff2) format("woff2"),
+//     url(#{$path-font}#{$NotoSansThin}.woff) format("woff");
+// }

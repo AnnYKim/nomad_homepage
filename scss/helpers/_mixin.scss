@@ -3,19 +3,23 @@
 // **** MIXIN SCSS (nykim@nykim.net)
 // **** Last Modified : 2018-09-05
 
+// @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 // 폰트
-@mixin font-main($weight: 500) {
-  font-family: "NotoSans", AppleGothic, sans-serif, Helvetica;
+@mixin font-main($weight: 400) {
+  font-family: "Noto Sans KR", AppleGothic, sans-serif, Helvetica;
   font-weight: $weight;
 }
 
 // 글자 줄임 표시
 @mixin ellipsis($lines: 1) {
-  @if ($lines == 1) {
+  @if ($lines==1) {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  } @else {
+  }
+
+  @else {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -48,13 +52,11 @@
   // Firefox 3.6+
   background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
   // Safari 4+, Chrome 1+
-  background-image: -webkit-gradient(
-    linear,
+  background-image: -webkit-gradient(linear,
     left top,
     right top,
     color-stop(0%, $from),
-    color-stop($stop, $to)
-  );
+    color-stop($stop, $to));
   // Safari 5.1+, Chrome 10+
   background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
   // Opera 11.10+
@@ -64,7 +66,7 @@
   // Standard
   background: linear-gradient(to right, $from 0%, $to $stop);
   // IE6-9
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
 }
 
 //keyframes
@@ -72,9 +74,11 @@
   @-webkit-keyframes #{$animation-name} {
     @content;
   }
+
   @-moz-keyframes #{$animation-name} {
     @content;
   }
+
   @keyframes #{$animation-name} {
     @content;
   }
@@ -85,22 +89,26 @@
   -webkit-animation-delay: $delay;
   -webkit-animation-duration: $duration;
   -webkit-animation-name: $animation;
-  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
 
   -moz-animation-delay: $delay;
   -moz-animation-duration: $duration;
   -moz-animation-name: $animation;
-  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
 
   -o-animation-delay: $delay;
   -o-animation-duration: $duration;
   -o-animation-name: $animation;
-  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
 
   animation-delay: $delay;
   animation-duration: $duration;
   animation-name: $animation;
-  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
 }
 
 // Flexbox display
@@ -269,12 +277,15 @@
   &::-webkit-input-placeholder {
     @content;
   }
+
   &:-moz-placeholder {
     @content;
   }
+
   &::-moz-placeholder {
     @content;
   }
+
   &:-ms-input-placeholder {
     @content;
   }

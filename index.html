@@ -1,120 +1,213 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>Nomad Connection</title>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <title>Nomad Connection</title>
 
-    <!--
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
       [TODO:]
       이하 모두 채워넣기
     -->
 
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="title" content="" />
-    <meta name="author" content="" />
-    <meta name="Reply-To" content="" />
-    <meta name="Location" content="" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="title" content="" />
+  <meta name="author" content="" />
+  <meta name="Reply-To" content="" />
+  <meta name="Location" content="" />
 
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="images/ogImage.png" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="images/ogImage.png" />
 
-    <meta name="theme-color" content="#323232" />
-    <meta name="msapplication-navbutton-color" content="#323232" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#323232" />
+  <meta name="theme-color" content="#323232" />
+  <meta name="msapplication-navbutton-color" content="#323232" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#323232" />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="images/android-icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="images/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/favicon-16x16.png"
-    />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
 
-    <!-- <link rel="stylesheet" href="css/style.css?ver=1212" /> -->
+  <!-- <link rel="stylesheet" href="css/style.css?ver=1212" /> -->
 
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
       <script
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
       ></script>
     <![endif]-->
 
-    <!--
+  <!--
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     -->
-  </head>
+</head>
 
-  <body>
-    <div class="wrap">
-      <header class="header">
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="grid">
         <h1 class="logo"><a>Nomad Connection</a></h1>
-        <nav class="nav">
-          <ul class="nav-depth-1">
-            <li class="nav-item">
-              About
-              <ul class="nav-depth-2">
-                <li class="nav-item-sub">Vision</li>
-                <li class="nav-item-sub">Value</li>
+        <ul class="nav">
+          <li class="nav-item">
+            <a>Company</a>
+          </li>
+          <li class="nav-item">
+            <a>Business</a>
+          </li>
+          <li class="nav-item">
+            <a>Culture</a>
+          <li class="nav-item">
+            <a>Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="section-visual">
+      <div class="grid">
+        <h2 class="visual-title">
+          <small class="title-small">블록체인 ・ AI 기술 전문 기업</small>
+          <span class="title-logo">Nomad Connection</span>
+        </h2>
+        <p class="visual-text">
+          노매드커넥션은 기술전문기업으로 블록체인·AI 분야의 전문인력을 통해 자체 솔루션을 연구개발하고,<br />
+          서비스를 플랫폼화하여 클라이언트와 일반 사용자에게 제공하고 있습니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-company">
+      <div class="grid">
+        <article class="article-about">
+          <h2 class="invisible">About Nomad Connection</h2>
+          <ul class="about-list">
+            <li class="about-list-item">
+              <strong class="title">Award</strong>
+              <ul>
+                <li class="list-detail">서울형 강소기업 선정</li>
+                <li class="list-detail">Startup Top 100 Awards</li>
+                <li class="list-detail">Red Herring Asia Top 100</li>
               </ul>
             </li>
-            <li class="nav-item">
-              Culture
-              <ul class="nav-depth-2">
-                <li class="nav-item-sub">서브메뉴1</li>
-                <li class="nav-item-sub">서브메뉴2</li>
+            <li class="about-list-item">
+              <strong class="title">Technique</strong>
+              <ul>
+                <li class="list-detail">녹색기술 인증 기업</li>
+                <li class="list-detail">소프트웨어 직접 생산기업</li>
+                <li class="list-detail">기술연구소 보유</li>
               </ul>
             </li>
-            <li class="nav-item">
-              Services
-              <ul class="nav-depth-2">
-                <li class="nav-item-sub">서브메뉴1</li>
-                <li class="nav-item-sub">서브메뉴2</li>
+            <li class="about-list-item">
+              <strong class="title">Certification</strong>
+              <ul>
+                <li class="list-detail">INNO-BIZ</li>
+                <li class="list-detail">벤처기업 인증</li>
+                <li class="list-detail">병역지정업체</li>
               </ul>
             </li>
-            <li class="nav-item">Contact</li>
           </ul>
-        </nav>
-      </header>
+        </article>
+        <article class="article-value">
+          <h2 class="article-title">
+            <span class="title-large">Our Value</span>
+            <span class="title-small">서로 다른 분야의 사람들이 연결되어 <span class="bold">함께 성장하는 노매드커넥션</span></span>
+          </h2>
+          <ul class="value-list">
+            <li class="value-list-item">
+              <strong class="title">사람</strong>
+            </li>
+            <li class="value-list-item">
+              <strong class="title">기술</strong>
+            </li>
+            <li class="value-list-item">
+              <strong class="title">자유&책임</strong>
+            </li>
+            <li class="value-list-item">
+              <strong class="title">연결</strong>
+            </li>
+          </ul>
+        </article>
+        <article class="article-keyword">
+          <h2 class="invisible">
+            Nomad Connection Keywords
+          </h2>
+          <div class="keyword-list">
+            <dl class="keyword-list-item">
+              <dt>People</dt>
+              <dd>우리는 기술기업이기 전에 기술을 만드는 사람들의 기업입니다</dd>
+            </dl>
+            <dl class="keyword-list-item">
+              <dt>Technology</dt>
+              <dd>우리는 기술혁신형기업으로 꾸준한 성장을 위해 항상 남들보다 먼저 움직이고자 합니다</dd>
+            </dl>
+            <dl class="keyword-list-item">
+              <dt>Freedom with responsibility</dt>
+              <dd>우리는 자율적 업무환경에서 나오는 개인의 역량과 책임감을 믿습니다</dd>
+            </dl>
+            <dl class="keyword-list-item">
+              <dt>Connection</dt>
+              <dd>우리는 서로 존중하고 배려하며 서로의 성장을 돕도록 연결되어 있습니다</dd>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section-business">
+      <article class="article-blockchain">
+        <h2 class="article-title">
+          <span class="title-large">Blockchain Solution</span>
+          <small class="title-small">다양한 산업 분야에 맞춤형 엔터프라이즈 블록체인 솔루션 제공</small>
+        </h2>
+        <div class="solution-description">
+          <div class="solution-title"><small>엔터프라이즈</small> 블록체인 솔루션</div>
+          <div class="solution-text">
+            <p>블록체인 기반의 전자거래는 제3의 신뢰기관 없이
+              보안성 투명성 경제성 신뢰성 신속성 등을 제공</p>
+            <p>Loopchain상 고성능 합의 알고리즘을 이용한 네트워크는
+              인증, 스마트 보험금 청구, 의료정보 공유 등 많은 분야의
+              다양한 비즈니스에 적용 가능</p>
+          </div>
+        </div>
+        <div class="solution-feature">
+          <ul>
+            <li class="feature-list-item">
+              <strong class="feature-title">금융투자협회 Chain ID 참여</strong>
+              <p class="feature-text">블록체인 기반 금융투자업권
+                공동 인증 시스템 개발</p>
+            </li>
+            <li class="feature-list-item">
+              <strong class="feature-title">U-Coin 개발 및 운영</strong>
+              <p class="feature-text">대학내 블록체인 기반
+                디지털화폐 실증 사업</p>
+            </li>
+            <li class="feature-list-item">
+              <strong class="feature-title">KISA 블록체인 시범사업</strong>
+              <p class="feature-text">관세청 개인통관 서비스 플랫폼 구축</p>
+            </li>
+            <li class="feature-list-item">
+              <strong class="feature-title">포스텍 블록체인 캠퍼스 구축</strong>
+              <p class="feature-text">DApp 개발을 위한 플랫폼 구축 및 Voting App 개발 </p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
 
-      <section class="section-visual">
-        <h2>노매드커넥션은 블록체인 AI 기술전문기업입니다.</h2>
-      </section>
+    <section class="section-culture">섹션 컬쳐</section>
+    <section class="section-service">
+      <article class="article-bc">블록체인 솔루션</article>
+      <article class="article-dv">다빈치</article>
+    </section>
+    <footer class="footer">푸터</footer>
+  </div>
+</body>
 
-      <section class="section-culture">섹션 컬쳐</section>
-      <section class="section-service">
-        <article class="article-bc">블록체인 솔루션</article>
-        <article class="article-dv">다빈치</article>
-      </section>
-      <footer class="footer">푸터</footer>
-    </div>
-  </body>
 </html>

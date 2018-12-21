@@ -1,0 +1,17 @@
+.grid {
+  max-width: 1300px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.invisible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+}
+
+.bold {
+  font-weight: $fw-b;
+}

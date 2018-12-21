@@ -1,0 +1,189 @@
+.section-visual {
+  height: 980px;
+  color: #fff;
+  background-color: #333;
+
+  &>.grid {
+    height: 100%;
+    text-align: center;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  .visual-title {
+    margin-bottom: 46px;
+
+    .title-small {
+      line-height: 2;
+      font-size: 22px;
+      letter-spacing: -1px;
+      font-weight: $fw-r;
+    }
+
+    .title-logo {
+      display: block;
+      width: 501px;
+      height: 39px;
+      margin: 0 auto;
+      background: hotpink;
+    }
+  }
+
+  .visual-text {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.62;
+    font-weight: $fw-l;
+  }
+}
+
+
+
+.section-company {
+  position: relative;
+}
+
+
+
+
+.article-about {
+  height: calc(497px - 125px);
+
+  .about-list {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    width: 1200px;
+    top: -125px;
+    position: absolute;
+  }
+
+  .about-list-item {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    position: relative;
+    width: 33.33%;
+    height: 497px;
+    background: #222;
+
+    // 타이틀 영역
+    .title {
+      position: relative;
+      display: block;
+      margin: 73px auto 60px;
+      background: $orange;
+
+      &:before {
+        position: absolute;
+        top: -73px;
+        left: 50%;
+        display: block;
+        width: 55px;
+        height: 55px;
+        content: '';
+        background: blue;
+        @include transform(translateX(-50%));
+      }
+    }
+
+    // 텍스트 영역
+    .list-detail {
+      margin-top: 18px;
+      color: #fff;
+      font-weight: $fw-r;
+      font-size: 21px;
+      line-height: 1.24;
+      letter-spacing: -0.6px;
+      text-align: center;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    $titleSize: //타이틀 크기
+    (1: (width: 101px, height: 20px),
+    2: (width: 157px, height: 25px),
+    3: (width: 204px, height: 21px));
+
+    @each $nth,
+    $value in $titleSize {
+      &:nth-child(#{$nth}) .title {
+        width: map-get($value, width);
+        height: map-get($value, height);
+      }
+    }
+
+  }
+
+}
+
+// end of article-about
+
+
+.article-value {
+  padding-top: 137px;
+  padding-bottom: 150px;
+  outline: 3px solid goldenrod;
+
+  .article-title {
+    text-align: center;
+
+    .title-large {
+      display: block;
+      margin: 0 auto;
+      width: 235px;
+      height: 33px;
+      margin-bottom: 23px;
+      background: gold;
+    }
+
+    .title-small {
+      font-weight: $fw-l;
+      font-size: 20px;
+      line-height: 1.48;
+      letter-spacing: -0.5px;
+      color: #3a3a3a;
+
+      strong {
+        font-weight: $fw-b;
+      }
+    }
+  }
+
+  .value-list {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    margin-top: 96px;
+    padding: 0 70px;
+
+    .title {
+      font-size: 18px;
+      font-weight: $fw-b;
+      text-align: center;
+
+      &:before {
+        display: block;
+        width: 90px;
+        height: 90px;
+        margin-bottom: 24px;
+        background: green;
+        content: '';
+      }
+    }
+  }
+}
+
+// end of article-value
+
+
+
+// ---- 테스트용 ----
+.section-visual {
+  display: none;
+}
