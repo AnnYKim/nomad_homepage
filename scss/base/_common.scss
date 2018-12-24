@@ -29,6 +29,14 @@
   color: $orange;
 }
 
+.br-pc {
+  display: block;
+
+  @include res--laptop {
+    display: none;
+  }
+}
+
 .br-tablet {
   display: none;
 

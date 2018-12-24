@@ -32,6 +32,10 @@
       @include align-items(flex-start);
       padding: 40px;
     }
+
+    @include res--mobile {
+      padding: 20px;
+    }
   }
 
   .visual-title {
