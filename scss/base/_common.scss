@@ -1,5 +1,6 @@
 .grid {
   max-width: 1300px;
+  height: 100%;
   padding: 0 50px;
   margin: 0 auto;
 }
@@ -14,4 +15,12 @@
 
 .bold {
   font-weight: $fw-b;
+}
+
+.medium {
+  font-weight: $fw-m;
+}
+
+.primary {
+  color: $orange;
 }

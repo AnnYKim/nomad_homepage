@@ -1,0 +1,161 @@
+.section-contact {
+  background-color: #f6f6f6;
+}
+
+
+
+.article-contact {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  padding-top: 336px;
+  padding-bottom: 110px;
+
+  .contact-image {
+    overflow: hidden;
+    display: block;
+    width: 372px;
+    height: 372px;
+    margin-right: 113px;
+    background: deepskyblue;
+    border-radius: 50%;
+  }
+
+  .contact-container {
+
+    .contact-title {
+      width: 274px;
+      height: 34px;
+      margin-bottom: 32px;
+      background: #4d4d4d;
+    }
+
+    .address {
+      outline: 2px solid gold;
+
+      .address-site {
+        display: block;
+        color: $orange;
+        font-size: 18px;
+        line-height: 1.28;
+        font-weight: $fw-r;
+        letter-spacing: -0.5px;
+        margin-bottom: 30px;
+      }
+
+
+      .address-info li {
+        display: block;
+        font-size: 17px;
+        font-weight: $fw-r;
+        color: #4f4f4f;
+
+        &:before {
+          display: inline-block;
+          margin-right: 12px;
+          color: $orange;
+          font-size: 17px;
+          font-weight: $fw-b;
+          letter-spacing: -0.4px;
+          content: '';
+        }
+
+        &.tel:before {
+          content: 'T';
+        }
+
+        &.fax:before {
+          content: 'F';
+        }
+
+        &.email:before {
+          content: 'E';
+        }
+      }
+    }
+
+    //end of address
+
+    .link-map {
+      position: relative;
+      display: inline-block;
+      margin-top: 44px;
+
+      span {
+        width: 82px;
+        height: 15px;
+        margin-left: 80px;
+        background: cornflowerblue;
+      }
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 67px;
+        height: 3px;
+        background-color: $orange;
+        content: '';
+        transform: translateY(-50%);
+      }
+
+    }
+
+  }
+
+  // end of contact-container
+}
+
+// end of article-contact
+
+.article-download {
+  width: 100%;
+  height: 370px;
+  padding-left: 52px;
+  padding-right: 46px;
+  background: #333;
+
+  &>.grid {
+    @include flexbox;
+    @include align-items(flex-end);
+    @include justify-content(space-between);
+    padding: 118px 0;
+  }
+
+  .download-title {
+    opacity: 0.9;
+    color: #fff;
+    font-size: 40px;
+    font-weight: $fw-t;
+    line-height: 1.38;
+    letter-spacing: -1.6px;
+  }
+
+  .title-text {
+    display: block;
+    margin-top: 25px;
+    font-size: 17px;
+    color: #979696;
+  }
+
+  .button-container {
+    width: 410px;
+
+    .button-download {
+      display: block;
+      width: 100%;
+      height: 47px;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      line-height: 47px;
+      background-color: $orange;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  }
+
+}
+
+// end of article-download

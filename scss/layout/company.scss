@@ -1,53 +1,9 @@
-.section-visual {
-  height: 980px;
-  color: #fff;
-  background-color: #333;
-
-  &>.grid {
-    height: 100%;
-    text-align: center;
-    @include flexbox;
-    @include flex-direction(column);
-    @include align-items(center);
-    @include justify-content(center);
-  }
-
-  .visual-title {
-    margin-bottom: 46px;
-
-    .title-small {
-      line-height: 2;
-      font-size: 22px;
-      letter-spacing: -1px;
-      font-weight: $fw-r;
-    }
-
-    .title-logo {
-      display: block;
-      width: 501px;
-      height: 39px;
-      margin: 0 auto;
-      background: hotpink;
-    }
-  }
-
-  .visual-text {
-    font-size: 20px;
-    letter-spacing: -0.4px;
-    line-height: 1.62;
-    font-weight: $fw-l;
-  }
-}
-
-
-
+// section-company
 .section-company {
   position: relative;
 }
 
-
-
-
+// article-about
 .article-about {
   height: calc(497px - 125px);
 
@@ -125,6 +81,7 @@
 // end of article-about
 
 
+// article-value
 .article-value {
   padding-top: 137px;
   padding-bottom: 150px;
@@ -182,8 +139,41 @@
 // end of article-value
 
 
+.article-keyword {
+  height: 348px;
+  background: #000;
 
-// ---- 테스트용 ----
-.section-visual {
-  display: none;
+  .keyword-list {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    height: 100%;
+    outline: 2px solid darkblue;
+  }
+
+  .keyword-list-item {
+    @include flexbox;
+    @include align-items(center);
+    margin-left: 65px;
+    line-height: 1.67;
+
+    .keyword-title {
+      margin-right: 13px;
+      font-weight: $fw-b;
+      color: $orange;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    .keyword-text {
+      opacity: 0.9;
+      color: rgba(236, 236, 236, 0.9);
+      font-size: 18px;
+      font-weight: $fw-dl;
+      letter-spacing: -0.6px;
+    }
+  }
 }
+
+// end of article-keyword

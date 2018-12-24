@@ -1,0 +1,42 @@
+.footer {
+  padding: 37px 0;
+  background-color: #2d2d2d;
+
+  &>.grid {
+    @include flexbox;
+    @include align-items(flex-end);
+    @include justify-content(space-between);
+  }
+
+  .copyright-container {
+    @include flexbox;
+    @include align-items(flex-end);
+
+    .logo {
+      width: 103px;
+      height: 25px;
+      margin-right: 15px;
+      background: saddlebrown;
+    }
+
+    .copyright {
+      font-size: 13px;
+      letter-spacing: -0.3px;
+      font-weight: $fw-m;
+      color: #575757;
+    }
+  }
+
+  .link-container {
+    @include flexbox;
+    @include align-items(center);
+
+    &>[class^=link-] {
+      display: block;
+      margin-left: 13px;
+      width: 32px;
+      height: 32px;
+      background: blueviolet;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.section-visual {
+  height: 980px;
+  color: #fff;
+  background-color: #333;
+
+  &>.grid {
+    height: 100%;
+    text-align: center;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  .visual-title {
+    margin-bottom: 46px;
+
+    .title-small {
+      line-height: 2;
+      font-size: 22px;
+      letter-spacing: -1px;
+      font-weight: $fw-r;
+    }
+
+    .title-logo {
+      display: block;
+      width: 501px;
+      height: 39px;
+      margin: 0 auto;
+      background: hotpink;
+    }
+  }
+
+  .visual-text {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.62;
+    font-weight: $fw-l;
+  }
+}

@@ -2,12 +2,17 @@
 
 /*! style.css */
 
-@import "helpers/mixin";
 @import "helpers/variable";
+@import "helpers/mixin";
 
 @import "base/font";
 @import "base/reset";
 @import "base/common";
 
+@import "layout/visual";
 @import "layout/header";
 @import "layout/company";
+@import "layout/business";
+@import "layout/welfare";
+@import "layout/contact";
+@import "layout/footer";
