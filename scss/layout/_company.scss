@@ -7,13 +7,27 @@
 .article-about {
   height: calc(497px - 125px);
 
+  @include res--laptop {
+    height: auto;
+  }
+
   .about-list {
+    position: absolute;
     @include flexbox;
     @include align-items(center);
     @include justify-content(center);
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     top: -125px;
-    position: absolute;
+
+    @include res--laptop {
+      position: relative;
+      top: 0;
+    }
+
+    @include res--tablet {
+      @include flex-direction(column);
+    }
   }
 
   .about-list-item {
@@ -26,25 +40,89 @@
     height: 497px;
     background: #222;
 
+    @include res--laptop {
+      height: 460px;
+    }
+
+    @include res--tablet {
+      @include flex-direction(row);
+      width: 100%;
+      height: 190px;
+      padding: 0 80px;
+    }
+
+    @include res--mobile {
+      height: 100px;
+      padding: 0 44px;
+    }
+
     // 타이틀 영역
     .title {
       position: relative;
       display: block;
-      margin: 73px auto 60px;
-      background: $orange;
 
-      &:before {
-        position: absolute;
-        top: -73px;
-        left: 50%;
+      @include res--tablet {
+        width: 50%;
+        margin-right: 50px;
+      }
+
+      @include res--mobile {
+        min-width: 102px;
+        margin-right: 45px;
+      }
+
+      i {
         display: block;
         width: 55px;
         height: 55px;
-        content: '';
-        background: blue;
-        @include transform(translateX(-50%));
+        margin: 0 auto 20px;
+        background-color: #fff;
+
+        @include res--laptop {
+          width: 48px;
+          height: 48px;
+          background: red;
+        }
+
+        @include res--tablet {
+          width: 38px;
+          height: 38px;
+          margin-bottom: 10px;
+          background: gold;
+        }
+
+        @include res--mobile {
+          width: 28px;
+          height: 28px;
+          background: chocolate;
+        }
+      }
+
+      span {
+        display: block;
+        margin: 0 auto 60px;
+        background: $orange;
+
+        @include res--laptop {
+          margin-bottom: 30px;
+        }
+
+        @include res--tablet {
+          margin-bottom: 0;
+          background: red;
+        }
+
       }
     }
+
+
+
+    .list-detail-container {
+      @include res--tablet {
+        width: 50%;
+      }
+    }
+
 
     // 텍스트 영역
     .list-detail {
@@ -59,7 +137,23 @@
       &:first-child {
         margin-top: 0;
       }
+
+      @include res--desktop {
+        font-size: 18px;
+      }
+
+      @include res--laptop {
+        margin-top: 12px;
+        font-size: 15px;
+        text-align: left;
+      }
+
+      @include res--mobile {
+        margin-top: 8px;
+        font-size: 11px;
+      }
     }
+
 
     $titleSize: //타이틀 크기
     (1: (width: 101px, height: 20px),
@@ -68,9 +162,41 @@
 
     @each $nth,
     $value in $titleSize {
-      &:nth-child(#{$nth}) .title {
+      &:nth-child(#{$nth}) .title span {
         width: map-get($value, width);
         height: map-get($value, height);
+      }
+    }
+
+    @include res--laptop {
+
+      $titleSize: //타이틀 크기
+        (1: (width: 90px, height: 18px),
+        2: (width: 140px, height: 22px),
+        3: (width: 185px, height: 19px));
+
+      @each $nth,
+      $value in $titleSize {
+        &:nth-child(#{$nth}) .title span {
+          width: map-get($value, width);
+          height: map-get($value, height);
+        }
+      }
+    }
+
+    @include res--mobile {
+
+      $titleSize: //타이틀 크기
+        (1: (width: 50px, height: 10px),
+        2: (width: 78px, height: 12px),
+        3: (width: 102px, height: 11px));
+
+      @each $nth,
+      $value in $titleSize {
+        &:nth-child(#{$nth}) .title span {
+          width: map-get($value, width);
+          height: map-get($value, height);
+        }
       }
     }
 
@@ -82,7 +208,7 @@
 
 
 // article-value
-.article-value {
+.article-vision {
   padding-top: 137px;
   padding-bottom: 150px;
   outline: 3px solid goldenrod;
@@ -112,12 +238,17 @@
     }
   }
 
-  .value-list {
+  .vision-list {
     @include flexbox;
     @include align-items(center);
     @include justify-content(space-between);
     margin-top: 96px;
     padding: 0 70px;
+
+
+    @include res--tablet {
+      @include flex-direction(column);
+    }
 
     .title {
       font-size: 18px;

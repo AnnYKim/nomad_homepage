@@ -1,0 +1,89 @@
+.section-visual {
+  height: 980px;
+  color: #fff;
+  background-color: #333;
+
+  @include res--laptop {
+    height: 740px;
+  }
+
+  @include res--tablet {
+    height: 620px;
+  }
+
+  @include res--mobile {
+    height: 370px;
+  }
+
+  &>.grid {
+    height: 100%;
+    text-align: center;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+
+    @include res--laptop {
+      @include justify-content(flex-end);
+      @include align-items(flex-start);
+      padding: 40px;
+    }
+  }
+
+  .visual-title {
+    margin-bottom: 46px;
+
+    @include res--laptop {
+      margin-bottom: 0;
+      text-align-last: left;
+    }
+
+    .title-small {
+      line-height: 2;
+      font-size: 22px;
+      letter-spacing: -1px;
+      font-weight: $fw-r;
+
+      @include res--tablet {
+        font-size: 18px;
+      }
+
+      @include res--mobile {
+        font-size: 13px;
+      }
+    }
+
+    .title-logo {
+      display: block;
+      width: 501px;
+      height: 39px;
+      margin: 0 auto;
+      background: hotpink;
+
+      @include res--tablet {
+        width: 360px;
+        height: 29px;
+      }
+
+      @include res--mobile {
+        width: 248px;
+        height: 20px;
+      }
+    }
+  }
+
+  .visual-text {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.62;
+    font-weight: $fw-l;
+
+    @include res--desktop {
+      font-size: 17px;
+    }
+
+    @include res--laptop {
+      display: none;
+    }
+  }
+}

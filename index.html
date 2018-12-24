@@ -87,24 +87,24 @@
           <h3 class="invisible">About Nomad Connection</h3>
           <ul class="about-list">
             <li class="about-list-item">
-              <strong class="title">Award</strong>
-              <ul>
+              <strong class="title"><i class="icon-award"></i><span>Award</span></strong>
+              <ul class="list-detail-container">
                 <li class="list-detail">서울형 강소기업 선정</li>
                 <li class="list-detail">Startup Top 100 Awards</li>
                 <li class="list-detail">Red Herring Asia Top 100</li>
               </ul>
             </li>
             <li class="about-list-item">
-              <strong class="title">Technique</strong>
-              <ul>
+              <strong class="title"><i class="icon-technique"></i><span>Technique</span></strong>
+              <ul class="list-detail-container">
                 <li class="list-detail">녹색기술 인증 기업</li>
                 <li class="list-detail">소프트웨어 직접 생산기업</li>
                 <li class="list-detail">기술연구소 보유</li>
               </ul>
             </li>
             <li class="about-list-item">
-              <strong class="title">Certification</strong>
-              <ul>
+              <strong class="title"><i class="icon-certification"></i><span>Certification</span></strong>
+              <ul class="list-detail-container">
                 <li class="list-detail">INNO-BIZ</li>
                 <li class="list-detail">벤처기업 인증</li>
                 <li class="list-detail">병역지정업체</li>
@@ -114,23 +114,23 @@
         </article>
       </div>
       <div class="grid">
-        <article class="article-value">
+        <article class="article-vision">
           <h3 class="article-title">
-            <span class="title-large">Our Value</span>
+            <span class="title-large">Our vision</span>
             <span class="title-small">서로 다른 분야의 사람들이 연결되어
               <span class="bold">함께 성장하는 노매드커넥션</span></span>
           </h3>
-          <ul class="value-list">
-            <li class="value-list-item">
+          <ul class="vision-list">
+            <li class="vision-list-item">
               <strong class="title">사람</strong>
             </li>
-            <li class="value-list-item">
+            <li class="vision-list-item">
               <strong class="title">기술</strong>
             </li>
-            <li class="value-list-item">
+            <li class="vision-list-item">
               <strong class="title">자유&책임</strong>
             </li>
-            <li class="value-list-item">
+            <li class="vision-list-item">
               <strong class="title">연결</strong>
             </li>
           </ul>
@@ -423,6 +423,57 @@
       </div>
     </footer>
   </div>
+
+  <div id="size">
+    <span class="size"></span>
+    (<span class="device"></span>)
+  </div>
+
+  <style>
+    #size {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: gold;
+      font-size: 30px;
+      outline: 3px solid green;
+    }
+
+  </style>
+  <script>
+    const desktopWidth = 1200,
+      laptopWidth = 980,
+      tabletWidth = 768,
+      mobileWidth = 640
+
+    const handleResize = () => {
+      const sizeText = document.querySelector(".size");
+      const device = document.querySelector(".device");
+      let sizeValue = window.innerWidth;
+
+      if (sizeValue > desktopWidth) {
+        device.innerText = "wide desktop"
+      }
+      if (sizeValue < desktopWidth) {
+        device.innerText = "desktop"
+      }
+      if (sizeValue < laptopWidth) {
+        device.innerText = "laptop"
+      }
+      if (sizeValue < tabletWidth) {
+        device.innerText = "tablet"
+      }
+      if (sizeValue < mobileWidth) {
+        device.innerText = "mobile"
+      }
+
+      sizeText.innerText = sizeValue;
+    }
+
+    window.addEventListener("load", handleResize);
+    window.addEventListener("resize", handleResize);
+
+  </script>
 </body>
 
 </html>
