@@ -3,12 +3,16 @@
   color: #fff;
   background-color: #333;
 
+  @include res--desktop {
+    height: 800px;
+  }
+
   @include res--laptop {
-    height: 740px;
+    height: 700px;
   }
 
   @include res--tablet {
-    height: 620px;
+    height: 520px;
   }
 
   @include res--mobile {

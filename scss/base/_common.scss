@@ -28,3 +28,11 @@
 .primary {
   color: $orange;
 }
+
+.br-tablet {
+  display: none;
+
+  @include res--tablet {
+    display: block;
+  }
+}
