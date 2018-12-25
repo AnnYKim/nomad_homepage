@@ -3,6 +3,7 @@ $desktop-width : 1200px;
 $laptop-width : 980px;
 $tablet-width: 769px;
 $mobile-width: 640px;
+$mobile-sm-width: 375px;
 
 // ---------- * ----------
 
@@ -30,6 +31,13 @@ $mobile-width: 640px;
 // Mobile
 @mixin res--mobile {
   @media screen and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+// Mobile (Small)
+@mixin res--mobile-sm {
+  @media screen and (max-width: #{$mobile-sm-width}) {
     @content;
   }
 }
