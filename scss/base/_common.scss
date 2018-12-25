@@ -29,6 +29,14 @@
   color: $orange;
 }
 
+.br-wide {
+  display: block;
+
+  @include res--desktop {
+    display: none;
+  }
+}
+
 .br-pc {
   display: block;
 
@@ -37,10 +45,42 @@
   }
 }
 
+.br-laptop {
+  display: none;
+
+  @include res--laptop {
+    display: block;
+  }
+}
+
 .br-tablet {
   display: none;
 
   @include res--tablet {
     display: block;
+  }
+}
+
+.show-tablet {
+  display: none;
+
+  @include res--tablet {
+    display: block;
+  }
+}
+
+span.show-tablet {
+  display: none;
+
+  @include res--tablet {
+    display: inline-block;
+  }
+}
+
+.hide-tablet {
+  display: block;
+
+  @include res--tablet {
+    display: none;
   }
 }
