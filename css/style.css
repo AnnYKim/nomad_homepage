@@ -1,6 +1,6 @@
 /**
  * -----------------------------------------------
- * Last Modified: 2018-12-25 19:18:29
+ * Last Modified: 2018-12-26 00:38:59
  * Author: nykim (nykim@nykim.net)
  * Description: NomadConnection Hompage
  * -----------------------------------------------
@@ -147,19 +147,59 @@ span.hide-tablet { display: inline-block; }
 
 @media screen and (max-width: 980px) { .section-visual .visual-text { display: none; } }
 
-.header { z-index: 100; position: fixed; top: 0; left: 0; width: 100%; height: 106px; background-color: rgba(0, 0, 0, 0.55); border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+.header { z-index: 100; position: fixed; top: 0; left: 0; width: 100%; height: 106px; padding: 0 40px; background-color: rgba(0, 0, 0, 0.55); border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+
+@media screen and (max-width: 1200px) { .header { height: 90px; } }
+
+@media screen and (max-width: 980px) { .header { height: 80px; padding: 0 30px; } }
+
+@media screen and (max-width: 769px) { .header { height: 64px; padding: 0 20px; } }
 
 .header > .grid { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; -webkit-justify-content: space-between; -moz-justify-content: space-between; -ms-justify-content: space-between; justify-content: space-between; -ms-flex-pack: space-between; height: 100%; }
 
-.header .logo { width: 167px; height: 40px; margin-left: 10px; background: orange; text-indent: -9999rem; overflow: hidden; }
+.header .logo { z-index: 10; position: relative; width: 167px; height: 40px; margin-left: 10px; background: orange; text-indent: -9999rem; overflow: hidden; cursor: pointer; }
+
+@media screen and (max-width: 980px) { .header .logo { width: 125px; height: 30px; } }
+
+@media screen and (max-width: 769px) { .header .logo { width: 107px; height: 26px; } }
+
+.header .burger { display: none; z-index: 10; position: relative; width: 47px; height: 35px; background: red; cursor: pointer; }
+
+@media screen and (max-width: 769px) { .header .burger { display: block; } }
+
+.header .nav-container { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -ms-flex-pack: center; }
+
+@media screen and (max-width: 769px) { .header .nav-container { display: none; position: fixed; top: 64px; left: 0; width: 100%; height: calc(100vh - 145px - 64px); background: brown; } }
 
 .header .nav { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; }
 
-.header .nav .nav-item { display: block; margin-left: 80px; font-size: 18px; letter-spacing: 0.4px; color: #fefefe; cursor: pointer; }
+@media screen and (max-width: 769px) { .header .nav { -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: space-around; -moz-justify-content: space-around; -ms-justify-content: space-around; justify-content: space-around; -ms-flex-pack: space-around; width: 100%; } }
+
+.header .nav .nav-item { display: block; margin-left: 80px; font-size: 18px; letter-spacing: 0.4px; color: #fefefe; font-weight: 400; cursor: pointer; }
+
+.header .nav .nav-item a { color: inherit; font-weight: inherit; }
+
+@media screen and (max-width: 1200px) { .header .nav .nav-item { font-size: 16px; margin-left: 60px; } }
+
+@media screen and (max-width: 980px) { .header .nav .nav-item { font-size: 15px; margin-left: 50px; } }
+
+@media screen and (max-width: 769px) { .header .nav .nav-item { margin-left: 0; font-weight: 700; font-size: 32px; margin-top: 50px; } }
+
+@media screen and (max-width: 640px) { .header .nav .nav-item { font-size: 26px; } }
 
 .header .nav .nav-item:hover { color: #ff5900; }
 
-.header .nav .nav-item:first-child { margin-left: 0; }
+.header .nav .nav-item:first-child { margin-left: 0; margin-top: 0; }
+
+.header .nav-footer { display: none; position: fixed; bottom: 0; left: 0; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: space-between; -moz-justify-content: space-between; -ms-justify-content: space-between; justify-content: space-between; -ms-flex-pack: space-between; width: 100%; height: 145px; padding: 15px 0; color: #646464; font-size: 10px; text-align: center; background-color: #202020; }
+
+.header .nav-footer-text span { display: block; margin-bottom: 7px; }
+
+.header .nav-footer .link-container { margin: 12px 0; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -ms-flex-pack: center; }
+
+.header .nav-footer .link-container > [class^=link-] { display: block; width: 20px; height: 20px; background: red; margin: 0 9px; }
+
+header.active .nav-container, header.active .nav-footer { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
 
 .section-company { position: relative; }
 
@@ -542,8 +582,6 @@ span.hide-tablet { display: inline-block; }
 @media screen and (max-width: 640px) { .article-ai .solution-feature .feature-list { padding: 0 44px; } }
 
 .article-ai .feature-list-item { flex-basis: auto; }
-
-.header { display: none; }
 
 .section-welfare { background-color: steelblue; padding-top: 205px; }
 

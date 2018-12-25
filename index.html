@@ -55,13 +55,27 @@
     <header class="header">
       <div class="grid">
         <h1 class="logo"><a>Nomad Connection</a></h1>
-        <ul class="nav">
-          <li class="nav-item"><a>Company</a></li>
-          <li class="nav-item"><a>Business</a></li>
-          <li class="nav-item"><a>Culture</a></li>
-
-          <li class="nav-item"><a>Contact</a></li>
-        </ul>
+        <div class="burger" role="button"></div>
+        <div class="nav-container">
+          <ul class="nav">
+            <li class="nav-item"><a>Company</a></li>
+            <li class="nav-item"><a>Business</a></li>
+            <li class="nav-item"><a>Culture</a></li>
+            <li class="nav-item"><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="nav-footer">
+          <p class="nav-footer-text">
+            <span>㈜ 노매드커넥션</span>
+            서울특별시 중구 삼일대로 343, 12층 (우) 04538<br/>
+            전화 : 02-2608-1575 ㅣ 팩스: 02-6442-1575</p>
+          <div class="link-container">
+            <a href="" class="link-pinterest" target="_blank" rel="noopener">Pinterest</a>
+            <a href="" class="link-facebook" target="_blank" rel="noopener">Facebook</a>
+            <a href="" class="link-blog" target="_blank" rel="noopener">Blog</a>
+          </div>
+            <p class="nav-footer-copyright">© 2019 Nomad Connection, Inc. ALL RIGHTS RESERVED.</p>
+        </div>
       </div>
     </header>
 
@@ -441,7 +455,7 @@
     #size {
       z-index: 9999;
       position: fixed;
-      top: 10px;
+      bottom: 10px;
       right: 10px;
       background: gold;
       font-size: 30px;
