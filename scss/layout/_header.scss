@@ -37,7 +37,7 @@
     width: 167px;
     height: 40px;
     margin-left: 10px;
-    background: orange;
+    @include bgi("logo/logo-white");
     @include text-hidden;
     cursor: pointer;
 

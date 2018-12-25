@@ -1,13 +1,17 @@
 .section-visual {
   height: 980px;
   color: #fff;
-  background-color: #333;
+  @include bgi("bg/bg-main-pc");
+  background-size: cover;
+  background-position: 50%;
 
   @include res--desktop {
     height: 800px;
   }
 
   @include res--laptop {
+    @include bgi("bg/bg-main-mo");
+    background-size: cover;
     height: 700px;
   }
 
@@ -66,7 +70,8 @@
       width: 501px;
       height: 39px;
       margin: 0 auto;
-      background: hotpink;
+      @include bgi("logo/logo-text-white");
+      @include text-hidden;
 
       @include res--tablet {
         width: 360px;

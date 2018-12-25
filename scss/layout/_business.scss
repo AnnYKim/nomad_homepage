@@ -118,7 +118,8 @@
       display: block;
       width: 505px;
       height: 34px;
-      background: #333;
+      @include text-hidden;
+      @include bgi("title/title-blockchain");
       margin: 0 auto;
 
       @include res--laptop {
@@ -197,8 +198,9 @@
       width: 1197px;
       height: 403px;
       margin: 0 auto;
-      @include bgi("test");
-      background-size: 100%;
+      @include bgi("bg/bg-blockchain-pc");
+      background-size: cover;
+      background-position: 50%;
       transform: translateX(-50%);
 
       @include res--desktop {
@@ -216,6 +218,7 @@
         left: 0;
         width: calc(100% - 90px);
         height: auto;
+        @include bgi("bg/bg-blockchain-mo");
         background-size: contain;
         padding-top: 53%;
         transform: none;
@@ -232,7 +235,7 @@
       position: relative;
       @include flexbox;
       width: 865px;
-      padding: 55px 132px 55px 122px;
+      padding: 55px 128px 55px 120px;
       margin: 0 auto;
       font-weight: $fw-dl;
       box-shadow: 4.9px 6.3px 27.3px 1.7px rgba(0, 0, 0, 0.03);
@@ -393,7 +396,8 @@
       display: block;
       width: 277px;
       height: 33px;
-      background: #333;
+      @include text-hidden;
+      @include bgi("title/title-ai");
       margin: 0 auto;
 
       @include res--laptop {
@@ -481,8 +485,9 @@
       @include flex-shrink(0);
       width: 737px;
       height: 100%;
-      @include bgi("bg-ai");
+      @include bgi("bg/bg-ai-pc");
       background-size: cover;
+      background-position: 50%;
 
       @include res--desktop {
         width: 60%;
@@ -502,6 +507,7 @@
         width: calc(100% - 90px);
         height: auto;
         margin: 0 auto;
+        @include bgi("bg/bg-ai-mo");
         background-size: contain;
         padding-top: 55%;
         transform: none;
@@ -569,7 +575,7 @@
           display: block;
           width: 288px;
           height: 25px;
-          background: chartreuse;
+          @include bgi("title/title-davinci");
           margin-bottom: 29px;
           content: '';
 

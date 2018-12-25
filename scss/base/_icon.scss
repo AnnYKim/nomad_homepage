@@ -1,0 +1,30 @@
+// 1. company section
+
+// [about 아이콘]
+$icon-about: (award: (position: 0 0, size:100%),
+technique: (position: 0 50.925926%, size: 100%),
+certification: (position: 0 100%, size: 103.773585%));
+
+// [about 타이틀]
+$title-about: (award: (size: 201.980198%,
+position: 0 100%,
+),
+technique: (size: 129.936306%,
+position: 0 51.219512%,
+),
+certification: (size: 100%,
+position: 0 0%,
+));
+
+// [value 아이콘]
+$icon-value: (people: (position: 0 0),
+technology: (position: 0 33.333333%),
+freeRes: (position: 0 66.666667%),
+connection: (position: 0 100%));
+
+// [welfare 아이콘]
+$icon-welfare: (point: (position: 0 0),
+support: (position: 0 25%),
+time: (position: 0 50%),
+health: (position: 0 75%),
+dining: (position: 0 100%));

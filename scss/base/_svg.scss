@@ -1,0 +1,25 @@
+// SVG images
+
+@function _buildIcon($icon) {
+  $icon: "#{$icon}";
+  @return $icon;
+}
+
+@function icon($icon-name,
+$color: "000",
+$stroke-color: "000",
+$color2: "000",
+$stroke-color2: "000",
+$stroke-width: 0,
+$css: ""
+
+) {
+  $icons: ( //
+  //----
+  // ~
+  //----
+  arrow-bottom: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.4 44"><text transform="translate(.442 41.15)" font-size="51.778" font-family="Gotham-Bold" fill="#f9f9f9">Nomad Connection</text></svg>',
+  );
+  $icon: _buildIcon(map-get($icons, $icon-name));
+  @return url("data:image/svg+xml;utf8,#{$icon}");
+}

@@ -43,6 +43,7 @@
 @mixin bgi($imageName, $type: "png") {
   background-image: url(#{$path-image-goVote}#{$imageName}.#{$type});
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 // 그라디언트 생성

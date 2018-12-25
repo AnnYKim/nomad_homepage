@@ -1,5 +1,7 @@
 .section-welfare {
-  background-color: steelblue;
+  @include bgi("bg/bg-welfare-pc");
+  background-position: 50%;
+  background-size: cover;
   padding-top: 205px;
 
   @include res--laptop {
@@ -7,6 +9,8 @@
   }
 
   @include res--tablet {
+    @include bgi("bg/bg-welfare-mo");
+    background-size: cover;
     padding-top: 80px;
   }
 
@@ -34,7 +38,8 @@
       display: block;
       width: 297px;
       height: 33px;
-      background: gold;
+      @include text-hidden;
+      @include bgi("title/title-welfare");
       margin: 0 auto;
 
       @include res--laptop {
@@ -59,6 +64,7 @@
       font-weight: $fw-l;
       font-size: 21px;
       line-height: 1.33;
+      color: #fff;
       letter-spacing: -0.5px;
 
       @include res--laptop {
@@ -96,7 +102,7 @@
       @include flexbox;
       @include align-items(center);
       @include justify-content(center);
-      @include flex-basis(25%);
+      // @include flex-basis(25%);
       margin-left: 18px;
 
       .circle {
@@ -111,7 +117,8 @@
         text-align: center;
         font-weight: $fw-dl;
         letter-spacing: -0.4px;
-        border: 5px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 5px solid rgba(151, 151, 151, 0.35);
         border-radius: 50%;
 
         @include res--laptop {
@@ -167,6 +174,10 @@
           margin-top: 0;
         }
 
+      }
+
+      .primary {
+        color: #ff6817;
       }
 
     }
@@ -251,31 +262,41 @@
       }
 
       @include res--mobile {
-        margin-top: 25px;
+        margin-top: 30px;
       }
 
-      &:before {
+      i {
         display: block;
         width: 52px;
         height: 44px;
         margin: 0 auto 34px;
-        background: crimson;
-        content: '';
 
+        @include res--laptop {
+          margin-bottom: 22px;
+        }
 
         @include res--tablet {
           width: 33px;
           height: 28px;
-          margin-bottom: 26px;
+          margin-bottom: 18px;
         }
 
         @include res--mobile {
           width: 26px;
           height: 22px;
-          margin-bottom: 17px;
+          margin-bottom: 10px;
         }
-
       }
+
+
+      @each $name,
+      $value in $icon-welfare {
+        .ic-welfare-#{$name} {
+          @include bgi("icon/icon-welfare");
+          background-position: map-get($value, position);
+        }
+      }
+
 
       &:after {
         position: absolute;

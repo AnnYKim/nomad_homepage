@@ -38,10 +38,40 @@
     position: relative;
     width: 33.33%;
     height: 497px;
-    background: #222;
+    background-position: 50%;
+
+    &.list-award {
+      @include bgi("bg/bg-about-award");
+      background-size: cover;
+
+      @include res--tablet {
+        background-image: none;
+        background-color: #1c1c1c;
+      }
+    }
+
+    &.list-technique {
+      @include bgi("bg/bg-about-technique");
+      background-size: cover;
+
+      @include res--tablet {
+        background-image: none;
+        background-color: $orange;
+      }
+    }
+
+    &.list-certification {
+      @include bgi("bg/bg-about-certification");
+      background-size: cover;
+
+      @include res--tablet {
+        background-image: none;
+        background-color: #1c1c1c;
+      }
+    }
 
     @include res--laptop {
-      height: 460px;
+      height: 440px;
     }
 
     @include res--tablet {
@@ -57,7 +87,7 @@
     }
 
     // 타이틀 영역
-    .title {
+    [class^=title] {
       position: relative;
       display: block;
 
@@ -71,37 +101,33 @@
         margin-right: 45px;
       }
 
-      i {
+      &>[class^=icon-] {
         display: block;
         width: 55px;
         height: 55px;
         margin: 0 auto 20px;
-        background-color: #fff;
 
         @include res--laptop {
           width: 48px;
           height: 48px;
-          background: red;
         }
 
         @include res--tablet {
           width: 38px;
           height: 38px;
           margin-bottom: 10px;
-          background: gold;
         }
 
         @include res--mobile {
           width: 28px;
           height: 28px;
-          background: chocolate;
         }
       }
 
       span {
         display: block;
         margin: 0 auto 60px;
-        background: $orange;
+        @include text-hidden;
 
         @include res--laptop {
           margin-bottom: 30px;
@@ -109,12 +135,10 @@
 
         @include res--tablet {
           margin-bottom: 0;
-          background: red;
         }
 
       }
     }
-
 
 
     .list-detail-container {
@@ -150,7 +174,7 @@
 
       @include res--tablet {
         margin-top: 10px;
-        font-size: 13px;
+        font-size: 14px;
       }
 
       @include res--mobile {
@@ -189,12 +213,29 @@
       }
     }
 
+    @include res--tablet {
+
+      $titleSize: //타이틀 크기
+        (1: (width: 75px, height: 15px),
+        2: (width: 115px, height: 18px),
+        3: (width: 146px, height: 15px));
+
+      @each $nth,
+      $value in $titleSize {
+        &:nth-child(#{$nth}) .title span {
+          margin-top: 14px;
+          width: map-get($value, width);
+          height: map-get($value, height);
+        }
+      }
+    }
+
     @include res--mobile {
 
       $titleSize: //타이틀 크기
         (1: (width: 50px, height: 10px),
         2: (width: 78px, height: 12px),
-        3: (width: 102px, height: 11px));
+        3: (width: 102px, height: 10px));
 
       @each $nth,
       $value in $titleSize {
@@ -207,6 +248,27 @@
 
   }
 
+
+
+  @each $name,
+  $value in $title-about {
+    .list-#{$name} .title span {
+      @include bgi("title/title-about");
+      background-size: map-get($value, size);
+      background-position: map-get($value, position);
+    }
+  }
+
+
+  @each $name,
+  $value in $icon-about {
+    .icon-#{$name} {
+      @include bgi("icon/icon-about");
+      background-size: map-get($value, size);
+      background-position: map-get($value, position);
+    }
+  }
+
 }
 
 // end of article-about
@@ -216,7 +278,6 @@
 .article-value {
   padding-top: 137px;
   padding-bottom: 150px;
-  outline: 3px solid goldenrod;
 
   @include res--laptop {
     padding-top: 110px;
@@ -235,8 +296,9 @@
       margin: 0 auto;
       width: 235px;
       height: 33px;
-      margin-bottom: 23px;
-      background: gold;
+      margin-bottom: 20px;
+      @include text-hidden;
+      @include bgi("title/title-value");
     }
 
     .title-small {
@@ -282,7 +344,6 @@
         width: 90px;
         height: 90px;
         margin-bottom: 24px;
-        background: green;
         content: '';
 
         @include res--laptop {
@@ -297,6 +358,14 @@
       }
     }
   }
+
+  @each $name,
+  $value in $icon-value {
+    .list-#{$name} .title:before {
+      @include bgi("icon/icon-value");
+      background-position: map-get($value, position);
+    }
+  }
 }
 
 // end of article-value
@@ -304,7 +373,9 @@
 
 .article-vision {
   padding: 120px 0;
-  background: #000;
+  @include bgi("bg/bg-vision-pc");
+  background-size: cover;
+  background-position: 50%;
 
   @include res--laptop {
     padding: 105px 0;
@@ -312,6 +383,7 @@
 
   @include res--tablet {
     padding: 90px 0 95px;
+    background-image: none;
     background-color: #f6f6f6;
   }
 
@@ -329,7 +401,8 @@
       width: 180px;
       height: 24px;
       margin: 0 auto;
-      background: red;
+      @include text-hidden;
+      @include bgi("title/title-vision");
 
       @include res--mobile {
         width: 130px;
@@ -360,7 +433,6 @@
     @include flex-direction(column);
     @include justify-content(center);
     height: 100%;
-    outline: 2px solid darkblue;
 
     @include res--tablet {
       @include align-items(center);
@@ -377,10 +449,11 @@
     font-size: 18px;
 
     &:first-child {
-      margin-top: 0 !important;
+      margin-top: 0;
     }
 
     @include res--laptop {
+      margin-top: 0;
       font-size: 15px;
       margin-left: 50px;
     }
@@ -404,7 +477,6 @@
       left: 0;
       width: 50px;
       height: 50px;
-      background: slateblue;
       transform: translateY(-50%);
       content: '';
 
@@ -427,7 +499,7 @@
       }
 
       @include res--mobile {
-        min-width: 230px;
+        min-width: 245px;
       }
 
     }
@@ -451,6 +523,14 @@
     }
   }
 
+  @each $name,
+  $value in $icon-value {
+    .vision-item-#{$name}:before {
+      @include bgi("icon/icon-value");
+      background-position: map-get($value, position);
+    }
+  }
+
 }
 
 // end of article-vision
@@ -459,7 +539,9 @@
 .vision-mobile {
   display: none;
   padding: 32px 0;
-  background-color: #333;
+  @include bgi("bg/bg-vision-mo");
+  background-size: cover;
+  background-position: 50%;
 
   &:before {
     display: block;
@@ -468,7 +550,7 @@
     width: 80px;
     height: 20px;
     content: '';
-    background: #fff;
+    @include bgi("logo/logo-white");
 
     @include res--mobile {
       width: 65px;

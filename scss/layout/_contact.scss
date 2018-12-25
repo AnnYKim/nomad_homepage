@@ -30,7 +30,7 @@
     width: 372px;
     height: 372px;
     margin-right: 113px;
-    background: deepskyblue;
+    @include bgi("bg/bg-contact");
     border-radius: 50%;
 
     @include res--laptop {
@@ -48,6 +48,7 @@
     @include res--mobile {
       width: 137px;
       height: 137px;
+      margin-left: -20px;
       margin-right: 26px;
     }
 
@@ -59,7 +60,8 @@
       width: 274px;
       height: 34px;
       margin-bottom: 32px;
-      background: #4d4d4d;
+      @include text-hidden;
+      @include bgi("title/title-contact");
 
       @include res--tablet {
         width: 210px;
@@ -68,13 +70,12 @@
       }
 
       @include res--mobile {
-        width: 161px;
-        height: 20px;
+        width: 143px;
+        height: 18px;
       }
     }
 
     .address {
-      outline: 2px solid gold;
 
       .address-site {
         display: block;
@@ -91,12 +92,12 @@
         }
 
         @include res--tablet {
-          font-size: 13px;
+          font-size: 12px;
           margin-bottom: 20px;
         }
 
         @include res--mobile {
-          font-size: 11px;
+          font-size: 10px;
           margin-bottom: 15px;
         }
       }
@@ -128,6 +129,10 @@
           font-weight: $fw-b;
           letter-spacing: -0.4px;
           content: '';
+
+          @include res--tablet {
+            margin-right: 6px;
+          }
         }
 
         &.tel:before {
@@ -160,30 +165,39 @@
       }
 
       span {
+        display: inline-block;
         width: 82px;
-        height: 15px;
+        height: 16px;
         margin-left: 80px;
-        background: cornflowerblue;
+        @include text-hidden;
+        @include bgi("title/title-viewMap");
 
         @include res--laptop {
           margin-left: 60px;
         }
 
+
         @include res--tablet {
+          width: 55px;
+          height: 10px;
           margin-left: 40px;
+        }
+
+        @include res--mobile {
+          width: 41px;
+          height: 8px;
         }
       }
 
       &:before {
         position: absolute;
-        top: 50%;
+        top: 6px;
         left: 0;
         display: block;
         width: 67px;
         height: 3px;
         background-color: $orange;
         content: '';
-        transform: translateY(-50%);
 
         @include res--laptop {
           width: 50px;
