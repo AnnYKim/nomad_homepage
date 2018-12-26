@@ -189,9 +189,11 @@
   .article-welfare {
     position: relative;
     padding-bottom: 303px;
+    margin-bottom: 130px;
 
     @include res--laptop {
       padding-bottom: 0px;
+      margin-bottom: 0;
     }
 
   }

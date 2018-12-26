@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // 폰트 경로
-$path-font: "../../fonts/";
+$path-font: "../fonts/";
 
 $fonts: ('Thin': 100,
 'Light': 200,
@@ -22,7 +22,8 @@ $weight in $fonts {
     local('NotoSans-#{$name}'),
     url('#{$path-font}eot/NotoSansKR-#{$name}-Hestia.eot'),
     url('#{$path-font}eot/NotoSansKR-#{$name}-Hestia.eot?#iefix') format('embedded-opentype'),
-    url('#{$path-font}woff/NotoSansKR-#{$name}-Hestia.woff') format('woff');
+    url('#{$path-font}woff/NotoSansKR-#{$name}-Hestia.woff') format('woff'),
+    url('#{$path-font}/otf/#{$name}.otf') format('opentype');
   }
 
 }

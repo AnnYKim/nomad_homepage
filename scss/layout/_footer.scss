@@ -18,6 +18,11 @@
     @include flexbox;
     @include align-items(flex-end);
     @include justify-content(space-between);
+    padding: 0 30px;
+
+    @include res--tablet {
+      padding: 0;
+    }
   }
 
   .copyright-container {
@@ -32,17 +37,17 @@
       width: 103px;
       height: 25px;
       margin-right: 15px;
-      background: saddlebrown;
+      @include bgi("logo/logo-gray");
 
       @include res--mobile {
         width: 83px;
-        height: 16px;
+        height: 20px;
         margin-right: 8px;
       }
 
       @include res--mobile-sm {
         width: 68px;
-        height: 13px;
+        height: 18px;
       }
     }
 
@@ -67,7 +72,20 @@
       margin-left: 13px;
       width: 32px;
       height: 32px;
-      background: blueviolet;
+      @include text-hidden;
+      @include bgi("icon/icon-link");
+
+      &.link-pinterest {
+        background-position: 0 0%;
+      }
+
+      &.link-facebook {
+        background-position: 0 50%;
+      }
+
+      &.link-blog {
+        background-position: 0 100%;
+      }
 
       @include res--mobile {
         width: 20px;

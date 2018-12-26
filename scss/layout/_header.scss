@@ -9,6 +9,10 @@
   background-color: rgba(0, 0, 0, 0.55);
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 
+  &.test {
+    outline: 4px solid gold;
+  }
+
   @include res--desktop {
     height: 90px;
   }
@@ -54,16 +58,77 @@
 
   // 버거메뉴
   .burger {
+    z-index: 100;
     display: none;
     z-index: 10;
     position: relative;
-    width: 47px;
-    height: 35px;
-    background: red;
+    width: 34px;
+    height: 34px;
     cursor: pointer;
+
+    // &:hover {
+    //   .line {
+    //     background-color: $orange;
+    //   }
+    // }
 
     @include res--tablet {
       display: block;
+    }
+
+    .line {
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 24px;
+      height: 4px;
+      margin-top: 8px;
+      margin-left: 4px;
+      transform: rotate(0deg);
+      transition: all .25s;
+      background-color: #fff;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 7px;
+      }
+
+      &:nth-child(3) {
+        top: 14px;
+      }
+
+      &:nth-child(4) {
+        top: 7px;
+        background-color: transparent;
+
+        &:before,
+        &:after {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 4px;
+          transform: rotate(0deg);
+          background-color: #fff;
+          content: '';
+          transition: all .25s;
+        }
+
+        &:before {
+          transform: rotate(45deg) translateX(-10px) translateZ(0);
+        }
+
+        &:after {
+          transform: rotate(-45deg) translateX(10px) translateZ(0);
+        }
+      }
+
     }
 
   }
@@ -80,7 +145,8 @@
       left: 0;
       width: 100%;
       height: calc(100vh - 145px - 64px);
-      background: brown;
+      // height: calc(100vh - 64px);
+      // @include bgi("bg/bg-menu");
     }
   }
 
@@ -93,9 +159,6 @@
       @include flex-direction(column);
       @include justify-content(space-around);
       width: 100%;
-      // height: 100%;
-      // max-height: 680px;
-      // padding: 50px 0;
     }
 
     // 각 메뉴 아이템
@@ -124,10 +187,15 @@
       }
 
       @include res--tablet {
+        opacity: 0;
         margin-left: 0;
         font-weight: $fw-b;
         font-size: 32px;
-        margin-top: 50px;
+        // margin-top: 50px;
+        margin-top: 4.5vh;
+        transform: translateY(20px);
+        transition: opacity .3s, transform .35s;
+        transition-timing-function: cubic-bezier(.77, 0, .175, 1);
       }
 
       @include res--mobile {
@@ -141,12 +209,26 @@
       &:first-child {
         margin-left: 0;
         margin-top: 0;
+        transition-delay: 200ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 230ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 160ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 80ms;
       }
     }
   }
 
   .nav-footer {
-    display: none;
+    // display: none;
+    opacity: 0;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -159,6 +241,9 @@
     font-size: 10px;
     text-align: center;
     background-color: #202020;
+    transition: opacity .3s;
+    @include pointer-none;
+    @include select-none;
 
     &-text {
       span {
@@ -177,8 +262,21 @@
         display: block;
         width: 20px;
         height: 20px;
-        background: red;
-        margin: 0 9px;
+        margin: 0 7px;
+        @include text-hidden;
+        @include bgi("icon/icon-link");
+
+        &.link-pinterest {
+          background-position: 0 0%;
+        }
+
+        &.link-facebook {
+          background-position: 0 50%;
+        }
+
+        &.link-blog {
+          background-position: 0 100%;
+        }
       }
     }
   }
@@ -190,8 +288,129 @@
 
 header.active {
 
+  background-color: #000;
+
   .nav-container,
   .nav-footer {
     @include flexbox;
+    pointer-events: initial !important;
+    touch-action: initial !important;
+    user-select: initial !important;
   }
+
+  .nav-footer {
+    pointer-events: initial;
+    user-select: initial;
+    touch-action: initial;
+  }
+
+  &+.header-background {
+    opacity: 1;
+    height: 100vh;
+    pointer-events: initial !important;
+    touch-action: initial !important;
+    user-select: initial !important;
+    transition: opacity .45s;
+  }
+
+  .burger {
+    .line {
+      &:nth-child(1) {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(100%);
+        transition-delay: 80ms;
+      }
+
+      &:nth-child(3) {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition-delay: 160ms;
+      }
+
+      &:nth-child(4) {
+
+        &:before,
+        &:after {
+          transition: opacity .2s, transform .38s;
+        }
+
+        &:before {
+          opacity: 1;
+          transform: rotate(45deg) translateX(0px) translateZ(0);
+          transition-delay: 150ms;
+        }
+
+        &:after {
+          opacity: 1;
+          transform: rotate(-45deg) translateX(0px) translateZ(0);
+          transition-delay: 250ms;
+        }
+      }
+    }
+
+    .burger-line {
+      &:nth-child(1) {
+        transform: rotate(135deg) translateZ(0);
+      }
+    }
+
+  }
+}
+
+.nav.active {
+
+
+  .nav-item {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity .4s, transform .45s;
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1);
+
+    &:first-child {
+      transition-delay: 0ms;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 90ms;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 180ms;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 270ms;
+    }
+  }
+
+  &+.nav-footer {
+    opacity: 1;
+    // transform: translateY(0);
+    transition: opacity .3s;
+    // transition-delay: 320ms;
+  }
+}
+
+
+
+
+.header-background {
+  // display: none;
+  opacity: 0;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  @include bgi("bg/bg-menu");
+  background-position: 50%;
+  background-size: cover;
+  background-position: 50%;
+  transition: opacity .3s;
+  @include pointer-none;
+  @include select-none;
 }

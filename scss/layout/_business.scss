@@ -40,11 +40,13 @@
         }
 
         @include res--tablet {
+          top: -8px;
           width: 11px;
           height: 11px;
         }
 
         @include res--mobile {
+          top: -6px;
           width: 7px;
           height: 7px;
         }
@@ -92,6 +94,46 @@
       }
     }
   }
+
+  .feature-list {
+    position: relative;
+
+    &:before {
+      display: none;
+      position: absolute;
+      top: -3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(191, 191, 191, 0.45);
+      content: '';
+
+      @include res--laptop {
+        display: block;
+        margin-left: -60px;
+      }
+
+      @include res--tablet {
+        margin-left: -30px;
+      }
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: -7px;
+      right: 58px;
+      width: 12px;
+      height: 1px;
+      transform: rotate(36deg);
+      background-color: rgba(191, 191, 191, 0.45);
+      content: '';
+
+      @include res--tablet {
+        right: 29px;
+      }
+    }
+  }
 }
 
 .article-blockchain {
@@ -111,7 +153,9 @@
     padding: 70px 0 72px;
   }
 
+
   .article-title {
+    position: relative;
     text-align: center;
 
     .title-large {
@@ -328,7 +372,7 @@
 
 
   .solution-feature {
-    margin-top: 115px;
+    margin-top: 96px;
 
     @include res--laptop {
       margin-top: 90px;
@@ -623,7 +667,8 @@
   }
 
   .solution-feature {
-    margin-top: 133px;
+    position: relative;
+    margin-top: 128px;
 
     @include res--laptop {
       margin-top: 90px;
@@ -653,6 +698,8 @@
         padding: 0 44px;
       }
     }
+
+
   }
 
   // end of solution-feature
@@ -660,6 +707,35 @@
   .feature-list-item {
     flex-basis: auto;
   }
+
 }
 
 // end of article-ai
+
+
+
+
+.bg-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 1542px;
+  height: 100%;
+  @include pointer-none;
+  transform: translateX(-50%);
+  background-position: 50%;
+
+  .article-blockchain & {
+    @include bgi("bg/bg-business-line-1");
+  }
+
+  .article-ai & {
+    background-position: 0 46%;
+    @include bgi("bg/bg-business-line-2");
+  }
+
+  @include res--laptop {
+    display: none;
+  }
+}

@@ -486,7 +486,6 @@
     }
 
     .vision-title {
-      margin-right: 13px;
       font-weight: $fw-b;
       color: $orange;
       letter-spacing: -0.5px;
@@ -499,7 +498,8 @@
       }
 
       @include res--mobile {
-        min-width: 245px;
+        // min-width: 245px;
+        min-width: 230px;
       }
 
     }

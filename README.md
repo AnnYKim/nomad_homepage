@@ -1,9 +1,34 @@
-# [ NomadConnection Homepage ]
+# [ Nomad Connection Homepage ]
 
-- **저장소 주소: [github.com/AnnYKim/nomad_homepage](https://github.com/AnnYKim/nomad_homepage)**
-- _Last Modified: 2018-12-21_
+**최종 수정일**: 2018-12-26
 
-//디자인 시안 753 = 375 (아이폰6부터 대응)
-//우선은 360까지(갤럭시S5) 대응하게 작업함
-//디자인 시안 중 17px 등(비즈니스 feature 부분), 20px미만으로 잡히는 건 10px이나 11px로 강제 지정함 (구글크롬이 지원하는 최소 폰트가 10px임! 모바일에선 10px이하도 지원하지만 웹으로 보면 적용되지 않음)
-//모바일에서 푸터가 너무 작아서 로고를 임의로 키우고, all rights 문구 제거, 버튼 별 간격 띄움 (터치 영역이 너무 좁음ㅠㅠ)
+## 폴더 구조
+
+- css/
+- files/
+- fonts/
+- images/
+  - bg/
+  - favicon/
+  - icon/
+  - logo/
+  - title/
+  - ogImage.png
+- js/
+  - ui.js
+- scss/
+- index.html
+- README.md
+
+## 전달사항
+
+- 풀 반응형이며, 최소 사이즈 720부터 대응합니다. (갤럭시 S5 크기)
+  - 반응형 분기는 아래와 같습니다.
+    - laptop(~980px), tablet(~769px), mobile(~640px)
+  - 반응형 스타일 추가 시 @include res--{분기이름}과 같이 사용합니다.
+    ```
+    @include res--tablet {color:red;} //태블릿 사이즈용
+    @include res--mobile {color:blue;} //모바일 사이즈용
+    ```
+- 폰트는 경량화 폰트를 사용했습니다. 따라서 일부 특수문자는 출력되지 않을 수 있습니다.
+  - 사용하는 폰트 굵기: Thin(100), Light(200), DemiLight(300), Regular(400), Medium(500), Bold(700)

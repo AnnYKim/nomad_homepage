@@ -6,16 +6,16 @@
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
-  padding-top: 336px;
+  padding-top: 190px;
   padding-bottom: 110px;
 
   @include res--laptop {
-    padding-top: 190px;
+    padding-top: 130px;
     padding-bottom: 90px;
   }
 
   @include res--tablet {
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 65px;
   }
 
@@ -155,6 +155,12 @@
       position: relative;
       display: inline-block;
       margin-top: 44px;
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -moz-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      @include align-items(center);
 
       @include res--laptop {
         margin-top: 32px;
@@ -168,31 +174,28 @@
         display: inline-block;
         width: 82px;
         height: 16px;
-        margin-left: 80px;
         @include text-hidden;
         @include bgi("title/title-viewMap");
-
-        @include res--laptop {
-          margin-left: 60px;
-        }
+        margin-left: 16px;
 
 
         @include res--tablet {
           width: 55px;
           height: 10px;
-          margin-left: 40px;
+          margin-left: 10px;
         }
 
         @include res--mobile {
           width: 41px;
           height: 8px;
+          margin-left: 6px;
         }
       }
 
       &:before {
-        position: absolute;
-        top: 6px;
-        left: 0;
+        // position: absolute;
+        // top: 6px;
+        // left: 0;
         display: block;
         width: 67px;
         height: 3px;
@@ -221,7 +224,9 @@
 .article-download {
   width: 100%;
   padding: 110px 46px 99px 52px;
-  background: #333;
+  @include bgi("bg/bg-download");
+  background-size: cover;
+  background-position: 50%;
 
   @include res--laptop {
     padding: 100px 40px 80px 40px;
@@ -321,6 +326,10 @@
       background-color: $orange;
       cursor: pointer;
       margin-top: 20px;
+
+      // &:hover {
+      //   background-color: #ec5d10;
+      // }
 
       @include res--laptop {
         line-height: 40px;
