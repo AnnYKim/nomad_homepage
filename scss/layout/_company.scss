@@ -491,6 +491,7 @@
       letter-spacing: -0.5px;
       font-size: inherit;
       text-transform: uppercase;
+      margin-right: 14px;
 
       @include res--tablet {
         min-width: 250px;
